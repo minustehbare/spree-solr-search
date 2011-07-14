@@ -1,5 +1,6 @@
 module Spree::Search
   class Solr < defined?(Spree::Search::MultiDomain) ? Spree::Search::MultiDomain :  Spree::Search::Base
+    include SolrSearchSanitizer::Sanitizer
     protected
 
     def get_products_conditions_for(base_scope, query)
@@ -44,6 +45,8 @@ module Spree::Search
       @properties[:facets_hash] = params[:facets] || {}
       @properties[:manage_pagination] = true
       @properties[:order_by_price] = params[:order_by_price]
+      
+      @properties[:keywords] = escape_special_characters(@properties[:keywords])
     end
     
     private
