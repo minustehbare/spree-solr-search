@@ -5,6 +5,7 @@ module SpreeSolrSearch
   class Engine < Rails::Engine
     def self.activate
       require 'websolr_acts_as_solr'
+      require 'solr_search_sanitizer/sanitizer'
       ENV['RAILS_ENV'] = Rails.env
       
       if Spree::Config.instance

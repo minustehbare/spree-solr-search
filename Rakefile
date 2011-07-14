@@ -23,6 +23,7 @@ Jeweler::Tasks.new do |s|
   s.authors = ["Roman Smirnov"]
   s.add_dependency 'spree_core', ['>= 0.30.1']
   s.add_dependency 'acts_as_solr_reloaded', ['>= 1.6.0']
+  s.add_dependency 'solr_search_sanitizer', ['>= 0.1.0']
   s.has_rdoc = false
   #s.extra_rdoc_files = [ "README.rdoc"]
   #s.rdoc_options = ["--main", "README.rdoc", "--inline-source", "--line-numbers"]
